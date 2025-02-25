@@ -3,7 +3,7 @@ import { buildPlugins } from "./buildPlugins";
 import { buildLoaders } from "./buildLoaders";
 import { buildResolvers } from "./buildResolvers";
 import webpack from "webpack";
-import { buikdDevServer } from "./buildDevServer";
+import { buildDevServer } from "./buildDevServer";
 
 export function buildWebpackConfig(
   options: BuildOptions
@@ -24,6 +24,6 @@ export function buildWebpackConfig(
     },
     resolve: buildResolvers(),
     devtool: isDev && "inline-source-map",
-    devServer: isDev && buikdDevServer(options),
+    devServer: isDev && buildDevServer(options),
   };
 }
