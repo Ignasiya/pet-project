@@ -46,10 +46,19 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     ],
   };
 
-  const fileLoader: webpack.RuleSetRule = {
-    test: /\.(png|jpe?g|gif|woff2?)$/i,
-    type: "asset/resource",
+  const svgLoader: webpack.RuleSetRule = {
+    test: /\.svg$/i,
+    use: ["@svgr/webpack"],
   };
 
-  return [tsLoader, scssLoader, cssLoader, fileLoader];
+  const fileLoader: webpack.RuleSetRule = {
+    test: /\.(png|jpe?g|gif|woff2|woff)$/i,
+    use: [
+      {
+        loader: "file-loader",
+      },
+    ],
+  };
+
+  return [tsLoader, scssLoader, cssLoader, fileLoader, svgLoader];
 }
