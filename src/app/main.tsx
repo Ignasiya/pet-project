@@ -2,6 +2,7 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { Providers } from "./providers";
 import { App } from "./App";
+import "shared/config/i18n/i18n";
 import "normalize.css";
 import "./styles/index.scss";
 
