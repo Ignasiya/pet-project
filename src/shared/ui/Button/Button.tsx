@@ -15,7 +15,10 @@ export const Button: FC<ButtonProps> = props => {
   const { className, children, theme, ...other } = props
 
   return (
-    <button className={classNames(styles.button, {}, [className, styles[theme]])} {...other}>
+    <button
+      className={classNames(styles.button, {}, [className, styles[theme]])}
+      {...other}
+    >
       {children}
     </button>
   )
