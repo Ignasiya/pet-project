@@ -1,7 +1,6 @@
 {
   "name": "ulbitv-learn",
   "version": "1.0.0",
-  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
@@ -29,6 +28,7 @@
     "@types/react-dom": "^19.0.4",
     "@types/react-router-dom": "^5.3.3",
     "@types/webpack": "^5.28.5",
+    "@types/webpack-bundle-analyzer": "^4.7.0",
     "@types/webpack-dev-server": "^4.7.1",
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
@@ -56,6 +56,7 @@
     "typescript": "^5.7.3",
     "typescript-eslint": "^8.26.0",
     "webpack": "^5.98.0",
+    "webpack-bundle-analyzer": "^4.10.2",
     "webpack-cli": "^6.0.1",
     "webpack-dev-server": "^5.2.0"
   },
@@ -67,6 +68,7 @@
     "normalize.css": "^8.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-error-boundary": "^5.0.0",
     "react-i18next": "^15.4.1",
     "react-router-dom": "^7.2.0"
   }
