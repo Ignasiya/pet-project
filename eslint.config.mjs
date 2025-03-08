@@ -5,6 +5,7 @@ import pluginReact from 'eslint-plugin-react'
 import importPlugin from 'eslint-plugin-import'
 import reactHooks from 'eslint-plugin-react-hooks'
 import jsxA11y from 'eslint-plugin-jsx-a11y'
+import i18next from 'eslint-plugin-i18next'
 
 /** @type {import('eslint').Linter.Config[]} */
 export default [
@@ -29,6 +30,7 @@ export default [
   reactHooks.configs['recommended-latest'],
   importPlugin.flatConfigs.recommended,
   jsxA11y.flatConfigs.recommended,
+  i18next.configs['flat/recommended'],
   {
     rules: {
       'react/react-in-jsx-scope': 'off',

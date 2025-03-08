@@ -1,13 +1,17 @@
 {
   "name": "ulbitv-learn",
   "version": "1.0.0",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "start": "webpack serve --env port=3000",
     "build:prod": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
     "lint": "eslint **/*.{ts,tsx}",
-    "style": "npx prettier --write '**/*.{ts,tsx}'"
+    "lint:fix": "eslint --fix **/*.{ts,tsx}",
+    "lint:scss": "npx stylelint **/*.scss",
+    "lint:scss:fix": "npx stylelint **/*.scss --fix",
+    "prettier": "npx prettier --write **/*.{ts,tsx}"
   },
   "keywords": [],
   "author": "",
@@ -27,6 +31,7 @@
     "babel-loader": "^10.0.0",
     "css-loader": "^7.1.2",
     "eslint": "^9.21.0",
+    "eslint-plugin-i18next": "^6.1.1",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
     "eslint-plugin-react": "^7.37.4",
@@ -38,6 +43,9 @@
     "sass": "^1.85.0",
     "sass-loader": "^16.0.5",
     "style-loader": "^4.0.0",
+    "stylelint": "^16.15.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0",
     "ts-loader": "^9.5.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.7.3",

@@ -9,6 +9,5 @@
   "bracketSpacing": true,
   "arrowParens": "avoid",
   "endOfLine": "lf",
-  "spaceBeforeFunctionParen": true,
   "trailingComma": "none"
 }
