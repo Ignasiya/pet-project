@@ -6,5 +6,5 @@ interface LoaderProps {
 }
 
 export function Loader({ className }: LoaderProps) {
-  return <span className={classNames(styles.loader, {}, [className])}></span>
+  return <div className={classNames(styles.loader, {}, [className])}></div>
 }

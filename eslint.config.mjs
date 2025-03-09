@@ -26,15 +26,7 @@ export default [
           moduleDirectory: ['node_modules', 'src/']
         }
       }
-    },
-    overrides: [
-      {
-        files: ['**/src/**/*.test.{ts,tsx}'],
-        rules: {
-          'i18next/no-literal-string': 'off'
-        }
-      }
-    ]
+    }
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
@@ -43,6 +35,12 @@ export default [
   importPlugin.flatConfigs.recommended,
   jsxA11y.flatConfigs.recommended,
   i18next.configs['flat/recommended'],
+  {
+    files: ['**/src/**/*.test.{ts,tsx}'],
+    rules: {
+      'i18next/no-literal-string': 'off'
+    }
+  },
   {
     rules: {
       'react/react-in-jsx-scope': 'off',
