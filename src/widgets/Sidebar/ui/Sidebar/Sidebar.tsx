@@ -19,11 +19,14 @@ export function Sidebar({ className }: SidebarProps) {
 
   return (
     <div
+      data-testid='sidebar'
       className={classNames(styles.sidebar, { [styles.collapsed]: collapsed }, [
         className
       ])}
     >
-      <Button onClick={onToggle}>{collapsed ? '>' : '<'}</Button>
+      <Button data-testid='sidebar-toggle' onClick={onToggle}>
+        {collapsed ? '>' : '<'}
+      </Button>
 
       <BugButton />
 
