@@ -51,7 +51,7 @@ jobs:
         run: npm ci
 
       - name: Run Jest
-        run: npm test:unit
+        run: npm run test:unit
 
   visual-tests:
     name: Visual Regression Tests (Loki)
@@ -78,7 +78,7 @@ jobs:
         run: npx wait-on http://localhost:6006
 
       - name: Run Loki tests
-        run: npm test:ui
+        run: npm run test:ui
 
   build:
     name: Build Project
