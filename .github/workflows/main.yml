@@ -9,7 +9,7 @@ on:
       - main
 
 env:
-  NODE_VERSION: '18'
+  NODE_VERSION: '22'
 
 jobs:
   lint:
@@ -53,12 +53,15 @@ jobs:
       - name: Run Jest
         run: npm run test:unit
 
-  visual-tests:
-    name: Visual Regression Tests (Loki)
+  chromatic:
+    name: Chromatic Visual Tests
     runs-on: ubuntu-latest
+    needs: [lint, test-unit]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -69,21 +72,17 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Start Storybook
-        run: npm run storybook &
-        env:
-          CI: true
-
-      - name: Wait for Storybook
-        run: npx wait-on http://localhost:6006
-
-      - name: Run Loki tests
-        run: npm run test:ui
+      - name: Publish to Chromatic
+        uses: chromaui/action@v1
+        with:
+          projectToken: chpt_cd99b4354a8dd01
+          buildScriptName: 'build-storybook'
+          exitZeroOnChanges: true
 
   build:
     name: Build Project
     runs-on: ubuntu-latest
-    needs: [lint, test, visual-tests]
+    needs: [lint, test, chromatic]
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

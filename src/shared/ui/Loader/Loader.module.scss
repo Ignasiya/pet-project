@@ -5,7 +5,7 @@
   left: -32px;
   border-radius: 50%;
   color: var(--inverted-primary-color);
-  background: currentColor;
+  background: currentcolor;
   box-shadow: 32px 0, -32px 0, 64px 0;
 }
 
@@ -27,21 +27,25 @@
     left: -32px;
     width: 16px;
   }
+
   15%,
   20% {
     left: -32px;
     width: 48px;
   }
+
   30%,
   35% {
-    left: 0px;
+    left: 0;
     width: 16px;
   }
+
   45%,
   50% {
-    left: 0px;
+    left: 0;
     width: 48px;
   }
+
   60%,
   65% {
     left: 32px;
@@ -53,6 +57,7 @@
     left: 32px;
     width: 48px;
   }
+
   95%,
   100% {
     left: 64px;
