@@ -11,7 +11,11 @@ import i18next from 'eslint-plugin-i18next'
 export default [
   { files: ['**/*.{js,mjs,cjs,ts,jsx,tsx}'] },
   {
-    languageOptions: { globals: globals.browser, ecmaVersion: 'latest', sourceType: 'module' },
+    languageOptions: {
+      globals: globals.browser,
+      ecmaVersion: 'latest',
+      sourceType: 'module'
+    },
     settings: {
       react: {
         version: 'detect'
@@ -22,7 +26,15 @@ export default [
           moduleDirectory: ['node_modules', 'src/']
         }
       }
-    }
+    },
+    overrides: [
+      {
+        files: ['**/src/**/*.test.{ts,tsx}'],
+        rules: {
+          'i18next/no-literal-string': 'off'
+        }
+      }
+    ]
   },
   pluginJs.configs.recommended,
   ...tseslint.configs.recommended,
